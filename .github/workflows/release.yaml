@@ -1,0 +1,15 @@
+name: Create PR to release neco
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat .github/ISSUE_TEMPLATE/tmpl.txt > t.txt
+          hub issue create -F t.txt -l operation
+
