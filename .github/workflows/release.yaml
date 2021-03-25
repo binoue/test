@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-20.04
     container:
       image: quay.io/cybozu-go/golan:1.16.2.1_focal
-    needs: release-cke-image
     steps:
       - name: Prepare files
         run: |
