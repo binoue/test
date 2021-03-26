@@ -13,6 +13,7 @@ jobs:
     container:
       image: quay.io/cybozu/golang:1.16-focal
     steps:
+      - uses: actions/checkout@v2
       - name: Prepare files
         run: |
           curl -sLf https://github.com/cybozu-go/cke/releases/download/v1.19.3/sonobuoy.tar.gz -O
