@@ -28,4 +28,4 @@ jobs:
           if ${{ env.prerelease }}; then
             PRERELEASE="-prerelease"
           fi
-          ghr -t ${{ secrets.GITHUB_TOKEN }} -u ${OWNER} -r ${REPOSITORY} -n ${{ env.tag }} ${PRERELEASE} -b "See [CHANGELOG.md](./CHANGELOG.md) for details." ${{ env.tag }} /tmp/upload/
+          ghr -t ${{ secrets.GITHUB_TOKEN }} -u ${OWNER} -r ${REPOSITORY} -n v${{ env.tag }} ${PRERELEASE} -b "See [CHANGELOG.md](./CHANGELOG.md) for details." v${{ env.tag }} /tmp/upload/
